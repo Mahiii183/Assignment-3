@@ -44,7 +44,7 @@ def plot_times():
     plt.plot([s["size"] for s in sizes_filter2],[s["time"] for s in sizes_filter2], label='Filter 2', marker='s', linestyle='-', color='red')
 
     # Labels and title
-    plt.xlabel('Size', fontsize=12)
+    plt.xlabel('Image Size (bytes)', fontsize=12)
     plt.ylabel('Average Time (seconds)', fontsize=12)
     plt.title('Average Execution Time vs. Size for Filter 1 and Filter 2', fontsize=14)
     plt.legend()
