@@ -16,8 +16,22 @@ int main(int argc, char** argv){
         return -1;
     }
 
-
-    // TODO: call barcode
+    char* barcode_value = argv[1];
+    int width = atoi(argv[2]);
+    int height = atoi(argv[3]);
+    char* output_filepath = argv[4];
+    if (width <= 0 || height <= 0) {
+        printf("Error: Width and height must be positive.\n");
+        return -1;
+    }
+    struct image* output_image = barcode(barcode_value, width, height);
+    if (output_image == NULL) {
+        printf("Error: Could not create image.\n");
+        return -1;
+    }
+    int result = saveimage(output_filepath, output_image);
+    free(output_image->pixels);
+    free(output_image);
     
-    // TODO: save result to file
+    return result;
 }
