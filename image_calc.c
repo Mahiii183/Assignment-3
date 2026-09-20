@@ -10,7 +10,7 @@ int main(int argc, char** argv){
     // You can expect argv[2] to be the integer width
     // You can expect argv[3] to be the integer height
     // You can expect argv[4] to be the output filepath.
-
+ 
     if(argc != 5) {
         printf("Incorrect number of arguments. Expected: ./build/image_calc <barcode_value> <width> <height> <output_image_path>\n");
         return -1;
@@ -32,6 +32,6 @@ int main(int argc, char** argv){
     int result = saveimage(output_filepath, output_image);
     free(output_image->pixels);
     free(output_image);
-    
+
     return result;
 }
